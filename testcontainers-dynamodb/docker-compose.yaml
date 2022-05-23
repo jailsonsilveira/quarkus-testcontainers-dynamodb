@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  dynamodb:
+    command: [ "-jar", "DynamoDBLocal.jar", "-sharedDb", "-dbPath", "/var/lib/dynamodb/" ]
+    container_name: dynamodb_teste
+    image: amazon/dynamodb-local:latest
+    ports:
+      - 4567:8000
+    user: root
+    volumes:
+      - dynamodb2:/var/lib/dynamodb/
+
+volumes:
+  dynamodb2:
