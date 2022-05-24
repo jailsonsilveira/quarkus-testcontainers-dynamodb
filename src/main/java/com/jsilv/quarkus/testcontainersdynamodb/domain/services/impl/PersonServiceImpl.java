@@ -4,13 +4,9 @@ import com.jsilv.quarkus.testcontainersdynamodb.domain.entity.Person;
 import com.jsilv.quarkus.testcontainersdynamodb.domain.repository.PersonRepository;
 import com.jsilv.quarkus.testcontainersdynamodb.domain.services.PersonService;
 import lombok.RequiredArgsConstructor;
-import software.amazon.awssdk.enhanced.dynamodb.mapper.StaticTableSchema;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.util.Optional;
-
-import static software.amazon.awssdk.enhanced.dynamodb.mapper.StaticAttributeTags.primaryPartitionKey;
-import static software.amazon.awssdk.enhanced.dynamodb.mapper.StaticAttributeTags.primarySortKey;
 
 @ApplicationScoped
 @RequiredArgsConstructor

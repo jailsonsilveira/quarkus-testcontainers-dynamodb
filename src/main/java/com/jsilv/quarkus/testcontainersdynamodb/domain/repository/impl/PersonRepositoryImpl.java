@@ -10,6 +10,7 @@ import software.amazon.awssdk.enhanced.dynamodb.TableSchema;
 import software.amazon.awssdk.enhanced.dynamodb.model.PutItemEnhancedRequest;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.validation.Valid;
 
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -29,7 +30,7 @@ public class PersonRepositoryImpl implements PersonRepository {
     }
 
     @Override
-    public Person save(Person item) {
+    public Person save(@Valid Person item) {
         this.getTable()
                 .putItemWithResponse(PutItemEnhancedRequest.builder(Person.class)
                         .item(item)
