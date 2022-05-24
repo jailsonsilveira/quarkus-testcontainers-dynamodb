@@ -19,7 +19,7 @@ public class PersonRepositoryImpl implements PersonRepository {
     private final DynamoDbEnhancedClient dynamoDbEnhancedClient;
 
     @Override
-    public Person findById(int id) {
+    public Person findById(String id) {
         Key key = Key.builder()
                 .partitionValue(String.valueOf(id))
                 .build();

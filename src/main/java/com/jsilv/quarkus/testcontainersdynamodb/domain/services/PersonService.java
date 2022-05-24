@@ -4,7 +4,7 @@ import com.jsilv.quarkus.testcontainersdynamodb.domain.entity.Person;
 
 public interface PersonService {
 
-    Person findById(int id);
+    Person findById(String id);
 
     Person create(Person person);
 

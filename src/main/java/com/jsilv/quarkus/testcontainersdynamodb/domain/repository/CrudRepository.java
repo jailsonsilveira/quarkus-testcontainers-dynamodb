@@ -4,7 +4,7 @@ import javax.validation.Valid;
 
 public interface CrudRepository<T> {
 
-    T findById(int id);
+    T findById(String id);
 
     T save(@Valid T item);
 

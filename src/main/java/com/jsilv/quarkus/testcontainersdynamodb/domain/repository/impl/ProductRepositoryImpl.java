@@ -19,7 +19,7 @@ public class ProductRepositoryImpl implements ProductRepository {
 
 
     @Override
-    public Product findById(int id) {
+    public Product findById(String id) {
 
         Key key = Key.builder()
                 .partitionValue(String.valueOf(id))

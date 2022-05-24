@@ -14,7 +14,7 @@ public class Product {
     @Getter(onMethod=@__({@DynamoDbPartitionKey}))
     private String id;
 
-    private String name;
+    private String sku;
 
     private String description;
 

@@ -1,9 +1,12 @@
 package com.jsilv.quarkus.testcontainersdynamodb.application.resources.request;
 
 import com.jsilv.quarkus.testcontainersdynamodb.domain.entity.Person;
+import com.jsilv.quarkus.testcontainersdynamodb.domain.entity.Product;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -18,7 +21,8 @@ public class CreatePersonRequest {
         return new Person(
                 this.getId(),
                 this.getName(),
-                this.getAge()
+                this.getAge(),
+                List.of(new Product("2", "abc", "description"))
         );
     }
 }

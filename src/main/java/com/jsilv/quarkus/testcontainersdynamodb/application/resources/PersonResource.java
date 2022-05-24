@@ -28,7 +28,7 @@ public class PersonResource {
 
     @GET
     @Path("{idPerson}")
-    public Response getById(@PathParam("idPerson") Integer idPerson) {
+    public Response getById(@PathParam("idPerson") String idPerson) {
         return Response.ok(
                         PersonResponse.fromPerson(
                                 this.personService.findById(idPerson)

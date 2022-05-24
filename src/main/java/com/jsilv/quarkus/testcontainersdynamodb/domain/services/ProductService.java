@@ -4,7 +4,7 @@ import com.jsilv.quarkus.testcontainersdynamodb.domain.entity.Product;
 
 public interface ProductService {
 
-    Product findById(int id);
+    Product findById(String id);
 
     Product create(Product product);
 

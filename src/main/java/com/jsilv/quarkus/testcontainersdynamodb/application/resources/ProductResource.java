@@ -29,7 +29,7 @@ public class ProductResource {
 
     @GET
     @Path("{idProduct}")
-    public Response getById(@PathParam("idProduct") Integer idProduct) {
+    public Response getById(@PathParam("idProduct") String idProduct) {
         return Response.ok(
                         ProductResponse.fromProduct(
                                 this.productService.findById(idProduct)

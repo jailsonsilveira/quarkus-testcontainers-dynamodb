@@ -15,7 +15,7 @@ public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
 
     @Override
-    public Product findById(int id)  {
+    public Product findById(String id)  {
         return this.productRepository.findById(id);
     }
 
@@ -27,14 +27,14 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product update(int id, Product product) {
-        return Optional.ofNullable(productRepository.findById(id))
+        return Optional.ofNullable(productRepository.findById(String.valueOf(id)))
                 .map(productRepository::save)
                 .orElseThrow(() -> new RuntimeException("Error while updating"));
     }
 
     @Override
     public Product delete(int id, Product product) {
-        return Optional.ofNullable(productRepository.findById(id))
+        return Optional.ofNullable(productRepository.findById(String.valueOf(id)))
                 .map(productRepository::delete)
                 .orElseThrow(() -> new RuntimeException("Error while deleting"));
     }

@@ -16,7 +16,7 @@ public class PersonServiceImpl implements PersonService {
 
 
     @Override
-    public Person findById(int id) {
+    public Person findById(String id) {
         return this.personRepository.findById(id);
     }
 
@@ -27,7 +27,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public Person update(int id, Person person) {
-        return Optional.ofNullable(personRepository.findById(id))
+        return Optional.ofNullable(personRepository.findById(String.valueOf(id)))
                 .map(personRepository::save)
                 .orElseThrow(() -> new RuntimeException("Error while updating"));
 
@@ -35,7 +35,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public Person delete(int id, Person person) {
-        return Optional.ofNullable(personRepository.findById(id))
+        return Optional.ofNullable(personRepository.findById(String.valueOf(id)))
                 .map(personRepository::delete)
                 .orElseThrow(() -> new RuntimeException("Error while deleting"));
     }

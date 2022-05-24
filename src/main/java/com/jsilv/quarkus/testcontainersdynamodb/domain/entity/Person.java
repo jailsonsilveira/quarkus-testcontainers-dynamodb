@@ -5,6 +5,7 @@ import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
 
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @DynamoDbBean
 @Data
@@ -20,4 +21,6 @@ public class Person {
     private String name;
 
     private Integer age;
+
+    List<Product> productList;
 }

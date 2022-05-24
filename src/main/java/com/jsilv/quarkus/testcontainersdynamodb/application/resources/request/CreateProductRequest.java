@@ -7,14 +7,14 @@ import lombok.Data;
 public class CreateProductRequest {
 
     private String id;
-    private String name;
+    private String sku;
     private String description;
 
 
     public Product toProduct() {
         return Product.builder()
                 .id(this.getId())
-                .name(this.getName())
+                .sku(this.getSku())
                 .description(this.getDescription())
                 .build();
     }
