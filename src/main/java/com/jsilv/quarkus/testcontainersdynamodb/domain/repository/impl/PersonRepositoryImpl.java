@@ -30,11 +30,12 @@ public class PersonRepositoryImpl implements PersonRepository {
 
     @Override
     public Person save(Person item) {
-        return this.getTable()
+        this.getTable()
                 .putItemWithResponse(PutItemEnhancedRequest.builder(Person.class)
                         .item(item)
                         .build())
                 .attributes();
+        return item;
     }
 
     @Override
